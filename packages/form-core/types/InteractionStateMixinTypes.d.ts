@@ -1,27 +1,28 @@
 import { Constructor } from '@open-wc/dedupe-mixin';
 import { LitElement } from '@lion/core';
+import { FormControlHost } from './FormControlMixinTypes';
 
 export declare class InteractionStateHost {
-  static get properties(): {
-    touched: {
-      type: BooleanConstructor;
-      reflect: true;
-    };
-    dirty: {
-      type: BooleanConstructor;
-      reflect: true;
-    };
-    filled: {
-      type: BooleanConstructor;
-      reflect: true;
-    };
-    prefilled: {
-      attribute: false;
-    };
-    submitted: {
-      attribute: false;
-    };
-  };
+  // static get properties(): {
+  //   touched: {
+  //     type: BooleanConstructor;
+  //     reflect: true;
+  //   };
+  //   dirty: {
+  //     type: BooleanConstructor;
+  //     reflect: true;
+  //   };
+  //   filled: {
+  //     type: BooleanConstructor;
+  //     reflect: true;
+  //   };
+  //   prefilled: {
+  //     attribute: false;
+  //   };
+  //   submitted: {
+  //     attribute: false;
+  //   };
+  // };
   prefilled: boolean;
   filled: boolean;
   touched: boolean;
@@ -43,6 +44,10 @@ export declare class InteractionStateHost {
 
 export declare function InteractionStateImplementation<T extends Constructor<LitElement>>(
   superclass: T,
-): T & Constructor<InteractionStateHost> & InteractionStateHost;
+): T &
+  Constructor<InteractionStateHost> &
+  InteractionStateHost &
+  Constructor<FormControlHost> &
+  typeof FormControlHost;
 
 export type InteractionStateMixin = typeof InteractionStateImplementation;
