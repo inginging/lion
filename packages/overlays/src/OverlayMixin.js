@@ -23,7 +23,6 @@ export const OverlayMixin = dedupeMixin(
         super();
         this.opened = false;
         this.config = {};
-        this._initMode = 'firstUpdated';
       }
 
       get config() {
@@ -130,14 +129,8 @@ export const OverlayMixin = dedupeMixin(
         }
       }
 
-      connectedCallback() {
-        if (super.connectedCallback) {
-          super.connectedCallback();
-        }
-        this._syncSetupOfOverlayCtrl();
-      }
-
-      _syncSetupOfOverlayCtrl() {
+      firstUpdated(changedProperties) {
+        super.firstUpdated(changedProperties);
         this._setupOverlayCtrl();
       }
 

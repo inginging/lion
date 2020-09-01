@@ -103,19 +103,6 @@ export class LionTooltip extends OverlayMixin(LitElement) {
     `;
   }
 
-  /**
-   * @override from OverlayMixin
-   */
-  // eslint-disable-next-line class-methods-use-this
-  _syncSetupOfOverlayCtrl() {
-    // we manually set it up later
-  }
-
-  firstUpdated(changedProperties) {
-    super.firstUpdated(changedProperties);
-    this._setupOverlayCtrl();
-  }
-
   // eslint-disable-next-line class-methods-use-this
   _arrowTemplate() {
     return html`

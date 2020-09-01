@@ -334,17 +334,8 @@ export class LionSelectRich extends ScopedElementsMixin(
     `;
   }
 
-  /**
-   * @override from OverlayMixin
-   */
-  // eslint-disable-next-line class-methods-use-this
-  _syncSetupOfOverlayCtrl() {
-    // we manually set it up later
-  }
-
   firstUpdated(changedProperties) {
     super.firstUpdated(changedProperties);
-    this._setupOverlayCtrl();
     this.__setupOverlay();
   }
 

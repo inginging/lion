@@ -186,18 +186,9 @@ export class LionInputDatepicker extends ScopedElementsMixin(OverlayMixin(LionIn
     }
   }
 
-  /**
-   * @override from OverlayMixin
-   */
-  // eslint-disable-next-line class-methods-use-this
-  _syncSetupOfOverlayCtrl() {
-    // we manually set it up later
-  }
-
   firstUpdated(changedProperties) {
     super.firstUpdated(changedProperties);
     this.__toggleInvokerDisabled();
-    this._setupOverlayCtrl();
   }
 
   /**
